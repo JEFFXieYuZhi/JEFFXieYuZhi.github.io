@@ -5,19 +5,19 @@
   
 
   
-  <title>理解 !important | xyz~宇智哥哥</title>
+  <title>如何实现浏览器内多个标签页内的通信 | xyz~宇智哥哥</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="!important与css优先级算法计算有关 !important &amp;gt; id &amp;gt; class &amp;gt; tag 注意：!important 比内联优先级高 列子： style p{ color:red !important; color:yellow; } /style body p style=”color:blue;” 不同的颜色，来理解important,按照浏览器正常的解析，">
+  <meta name="description" content="如何实现浏览器内多个标签页内的通信调用localstorge、cookies等本地存储方式 详细的说一下这两种方式:    localstorge在一个标签页里被添加、修改或删除时，都会触发一个storage事件，通过在另一个标签页里监听storage事件，即可得到localstorge存储的值，实现不同标签页之间的通信。 使用cookie+setInterval，将要传递的信息存储在cookie">
 <meta property="og:type" content="article">
-<meta property="og:title" content="理解 !important">
-<meta property="og:url" content="http://yoursite.com/2019/01/26/理解-important/index.html">
+<meta property="og:title" content="如何实现浏览器内多个标签页内的通信">
+<meta property="og:url" content="http://yoursite.com/2019/02/01/如何实现浏览器内多个标签页内的通信/index.html">
 <meta property="og:site_name" content="xyz~宇智哥哥">
-<meta property="og:description" content="!important与css优先级算法计算有关 !important &amp;gt; id &amp;gt; class &amp;gt; tag 注意：!important 比内联优先级高 列子： style p{ color:red !important; color:yellow; } /style body p style=”color:blue;” 不同的颜色，来理解important,按照浏览器正常的解析，">
+<meta property="og:description" content="如何实现浏览器内多个标签页内的通信调用localstorge、cookies等本地存储方式 详细的说一下这两种方式:    localstorge在一个标签页里被添加、修改或删除时，都会触发一个storage事件，通过在另一个标签页里监听storage事件，即可得到localstorge存储的值，实现不同标签页之间的通信。 使用cookie+setInterval，将要传递的信息存储在cookie">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-26T02:52:36.744Z">
+<meta property="og:updated_time" content="2019-02-01T01:35:56.704Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="理解 !important">
-<meta name="twitter:description" content="!important与css优先级算法计算有关 !important &amp;gt; id &amp;gt; class &amp;gt; tag 注意：!important 比内联优先级高 列子： style p{ color:red !important; color:yellow; } /style body p style=”color:blue;” 不同的颜色，来理解important,按照浏览器正常的解析，">
+<meta name="twitter:title" content="如何实现浏览器内多个标签页内的通信">
+<meta name="twitter:description" content="如何实现浏览器内多个标签页内的通信调用localstorge、cookies等本地存储方式 详细的说一下这两种方式:    localstorge在一个标签页里被添加、修改或删除时，都会触发一个storage事件，通过在另一个标签页里监听storage事件，即可得到localstorge存储的值，实现不同标签页之间的通信。 使用cookie+setInterval，将要传递的信息存储在cookie">
   
     <link rel="alternate" href="/atom.xml" title="xyz~宇智哥哥" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-理解-important" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-如何实现浏览器内多个标签页内的通信" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/01/26/理解-important/" class="article-date">
-  <time datetime="2019-01-26T02:44:50.000Z" itemprop="datePublished">2019-01-26</time>
+    <a href="/2019/02/01/如何实现浏览器内多个标签页内的通信/" class="article-date">
+  <time datetime="2019-02-01T01:32:59.000Z" itemprop="datePublished">2019-02-01</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      理解 !important
+      如何实现浏览器内多个标签页内的通信
     </h1>
   
 
@@ -86,26 +86,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>!important与css优先级算法计算有关</p>
-<p>!important &gt; id &gt; class &gt; tag</p>
-<p>注意：!important 比内联优先级高</p>
-<p>列子：</p>
-<p>style</p>
-<p>p{</p>
-<p>color:red !important;</p>
-<p>color:yellow;</p>
-<p>}</p>
-<p>/style</p>
-<p>body</p>
-<p>p style=”color:blue;”</p>
-<p>不同的颜色，来理解important,按照浏览器正常的解析，下面的yellow会覆盖上面的red，但是如果加了 !important ，red的优先级将会高于yellow的优先级。</p>
-<p>p</p>
-<p>/body</p>
-
+        <p>如何实现浏览器内多个标签页内的通信<br>调用localstorge、cookies等本地存储方式</p>
+<p>详细的说一下这两种方式:<br>    localstorge在一个标签页里被添加、修改或删除时，都会触发一个storage事件，通过在另一个标签页里监听storage事件，即可得到localstorge存储的值，实现不同标签页之间的通信。</p>
+<pre><code>使用cookie+setInterval，将要传递的信息存储在cookie中，每隔一定时间读取cookie信息，即可随时获取要传递的信息。
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/01/26/理解-important/" data-id="cjrldnpp20001dw8i04spkwsp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/01/如何实现浏览器内多个标签页内的通信/" data-id="cjrldnpp40002dw8i5dme5wnj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -114,19 +102,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/02/01/如何实现浏览器内多个标签页内的通信/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          如何实现浏览器内多个标签页内的通信
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/01/19/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/01/26/理解-important/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello 宇智哥哥</div>
+      <div class="article-nav-title">理解 !important</div>
     </a>
   
 </nav>
